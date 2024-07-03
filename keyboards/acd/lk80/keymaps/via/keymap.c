@@ -24,9 +24,9 @@ enum layer_names {
 };
 
 // Defines the keycodes used by our macros in process_record_user
-enum custom_keycodes {
-    US_FLAG
-};
+// enum custom_keycodes {
+//     US_FLAG
+// };
 
 enum unicode_names {
     SPZR
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_LBRC, KC_RBRC, KC_BSLS,
         KC_BSPC, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, KC_ENT , KC_PGUP,
         KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, MO(_AG), KC_UP  , KC_PGDN,
-        KC_LCTRL,MO(_FN), KC_LGUI, KC_LALT         , KC_ENT                   , KC_SPC          , KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTRL,MO(_FN), KC_LGUI, KC_LALT         , KC_SPC                   , KC_SPC          , KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT
     ),
     /* Function */
     [_FN] = LAYOUT(
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PSCR,
         KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PENT, KC_SLCK,
         MO(_AG), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PDOT, KC_PSLS, XXXXXXX, XXXXXXX, KC_NLCK, 
-        XXXXXXX, _______, XXXXXXX, KC_MHEN         , KC_KANA                  , XXXXXXX         , KC_HENK, KC_WBAK, XXXXXXX, KC_WFWD
+        XXXXXXX, _______, XXXXXXX, XXXXXXX         , XXXXXXX                  , XXXXXXX         , XXXXXXX, KC_WBAK, XXXXXXX, KC_WFWD
     ),
     /* AltGr */
     [_AG] = LAYOUT(
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         UC_MOD , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,         
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______         , _______                  , X(SPZR)         , _______, _______, _______, _______
+        _______, _______, _______, _______         , X(SPZR)                  , X(SPZR)         , _______, _______, _______, _______
     )
     /* Hyper */
     // [_HY] = LAYOUT(
@@ -76,14 +76,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case US_FLAG:
-            // US flag is 2 unicode characters [U][S]
-            if (record->event.pressed) {
-                send_unicode_hex_string("1f1fa");
-                send_unicode_hex_string("1f1f8");
-            }
-            break;
-    }
+    // switch (keycode) {
+    //     case US_FLAG:
+    //         // US flag is 2 unicode characters [U][S]
+    //         if (record->event.pressed) {
+    //             send_unicode_hex_string("1f1fa");
+    //             send_unicode_hex_string("1f1f8");
+    //         }
+    //         break;
+    // }
     return true;
 }

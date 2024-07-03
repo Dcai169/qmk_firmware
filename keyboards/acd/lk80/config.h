@@ -152,4 +152,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define BOOTMAGIC_LITE_COLUMN 0
 
 /* Overrides */
-#define UNICODE_SELECTED_MODES UC_WINC, UC_LNX, UC_OSX
+#define UNICODE_SELECTED_MODES UC_LNX, UC_OSX
